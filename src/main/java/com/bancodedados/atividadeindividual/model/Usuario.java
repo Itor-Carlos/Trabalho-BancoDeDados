@@ -12,6 +12,8 @@ public class Usuario {
     private String nome;
     private LocalDate dataAniversario;
 
+    public Usuario(){}
+
     public Usuario(String cpf, String nome, LocalDate dataAniversario) {
         this.cpf = cpf;
         this.nome = nome;
