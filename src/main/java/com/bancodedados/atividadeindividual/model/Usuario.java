@@ -10,14 +10,14 @@ public class Usuario {
     @Id
     private String cpf;
     private String nome;
-    private LocalDate dataAniversario;
+    private LocalDate dataNascimento;
 
     public Usuario(){}
 
-    public Usuario(String cpf, String nome, LocalDate dataAniversario) {
+    public Usuario(String cpf, String nome, LocalDate dataNascimento) {
         this.cpf = cpf;
         this.nome = nome;
-        this.dataAniversario = dataAniversario;
+        this.dataNascimento = dataNascimento;
     }
 
     public String getCpf() {
@@ -36,11 +36,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public LocalDate getDataAniversario() {
-        return dataAniversario;
+    public LocalDate getdataNascimento() {
+        return dataNascimento;
     }
 
-    public void setDataAniversario(LocalDate dataAniversario) {
-        this.dataAniversario = dataAniversario;
+    public void setdataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 }

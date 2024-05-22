@@ -30,8 +30,8 @@ public class UsuarioController {
 
         if(usuario.getCpf() == null) errorList.add("Cpf is a required field");
         if(usuario.getNome() == null) errorList.add("Nome is a required field");
-        if(usuario.getDataAniversario() == null){
-            errorList.add("Data de aniversário is a required field");
+        if(usuario.getdataNascimento() == null){
+            errorList.add("Data de nascimento is a required field");
         }
 
         if(!errorList.isEmpty()){
