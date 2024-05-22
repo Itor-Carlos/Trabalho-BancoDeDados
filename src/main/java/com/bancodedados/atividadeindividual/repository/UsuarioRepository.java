@@ -19,5 +19,4 @@ public class UsuarioRepository {
         Query query = entityManager.createQuery(sql);
         return query.getResultList();
     }
-
 }
