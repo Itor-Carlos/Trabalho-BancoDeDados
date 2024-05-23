@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -19,6 +20,10 @@ public class UsuarioService {
 
     public void saveUsuario(Usuario usuario){
         this.usuarioRepository.saveUsuario(usuario);
+    }
+
+    public Optional<Usuario> findByCpf(String cpf) {
+        return usuarioRepository.findByCpf(cpf);
     }
 
 }

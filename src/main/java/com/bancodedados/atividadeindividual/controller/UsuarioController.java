@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -39,6 +40,14 @@ public class UsuarioController {
         }
         this.usuarioService.saveUsuario(usuario);
         return ResponseEntity.ok(usuario);
+    }
+
+    @GetMapping("/{cpf}")
+    public ResponseEntity<?> getUsuario(@PathVariable("cpf") String cpf) {
+        if(cpf == null) ResponseEntity.badRequest().body("Cpf is a required field");
+
+        Optional<Usuario> usuario = usuarioService.findByCpf(cpf);
+        return usuario.isPresent() ? ResponseEntity.ok().body(usuario.get()) : ResponseEntity.notFound().build();
     }
 
 }

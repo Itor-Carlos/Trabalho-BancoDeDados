@@ -9,6 +9,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class UsuarioRepository {
@@ -29,5 +30,11 @@ public class UsuarioRepository {
                 .setParameter(2, usuario.getNome())
                 .setParameter(3, usuario.getdataNascimento());
         query.getResultList();
+    }
+
+    public Optional<Usuario> findByCpf(String cpf) {
+        TypedQuery<Usuario> query = entityManager.createQuery("FROM Usuario WHERE cpf = :cpf", Usuario.class)
+                .setParameter("cpf", cpf);
+        return query.getResultStream().findFirst();
     }
 }
