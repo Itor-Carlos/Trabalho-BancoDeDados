@@ -8,16 +8,16 @@ Trabalho individual para a matéria de Banco de Dados na UFS
  - PostgreSQL
 
 ### Como rodar a aplicação:
- - Clone o repositório com o comando no terminal:
-    -- ```
+ * Clone o repositório com o comando no terminal:
+    - ```
         git clone https://github.com/Itor-Carlos/Trabalho-BancoDeDados.git
        ```
- - Entre dentro da pasta onde o repositório foi clonado e rode:
-    -- ```
+ * Entre dentro da pasta onde o repositório foi clonado e rode:
+    - ```
         docker-compose up -d
        ```
- - Rode o código com um:
-    -- ```
+ * Rode o código com um:
+    - ```
         mvn spring-boot:run
        ```
 
