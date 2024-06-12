@@ -1,5 +1,6 @@
 package com.bancodedados.atividadeindividual.service;
 
+import com.bancodedados.atividadeindividual.exceptions.not_found.UsuarioNotFoundException;
 import com.bancodedados.atividadeindividual.model.Usuario;
 import com.bancodedados.atividadeindividual.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,8 @@ public class UsuarioService {
     }
 
     public Optional<Usuario> findByCpf(String cpf) {
-        return usuarioRepository.findByCpf(cpf);
+        return Optional.ofNullable(usuarioRepository.findByCpf(cpf)
+                .orElseThrow(UsuarioNotFoundException::new));
     }
 
 }

@@ -1,5 +1,6 @@
 package com.bancodedados.atividadeindividual.controller;
 
+import com.bancodedados.atividadeindividual.exceptions.not_found.UsuarioNotFoundException;
 import com.bancodedados.atividadeindividual.model.Usuario;
 import com.bancodedados.atividadeindividual.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -67,9 +68,8 @@ public class UsuarioController {
     })
     public ResponseEntity<?> getUsuario(@PathVariable("cpf") String cpf) {
         if(cpf == null) ResponseEntity.badRequest().body("Cpf is a required field");
-
         Optional<Usuario> usuario = usuarioService.findByCpf(cpf);
-        return usuario.isPresent() ? ResponseEntity.ok().body(usuario.get()) : ResponseEntity.notFound().build();
+        return ResponseEntity.ok().body(usuario.get());
     }
 
 }
