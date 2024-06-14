@@ -28,7 +28,7 @@ public class UsuarioRepository {
         Query query = entityManager.createNativeQuery("INSERT INTO Usuario (cpf, nome, data_nascimento) VALUES (?,?,?) RETURNING nome, data_aniversario")
                 .setParameter(1, usuario.getCpf())
                 .setParameter(2, usuario.getNome())
-                .setParameter(3, usuario.getdataNascimento());
+                .setParameter(3, usuario.getDataNascimento());
         query.getResultList();
     }
 

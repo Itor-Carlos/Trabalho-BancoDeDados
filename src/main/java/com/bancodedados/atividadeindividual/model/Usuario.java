@@ -36,7 +36,7 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public LocalDate getdataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 

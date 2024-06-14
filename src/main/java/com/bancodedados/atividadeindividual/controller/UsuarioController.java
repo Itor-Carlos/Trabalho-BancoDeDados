@@ -46,7 +46,7 @@ public class UsuarioController {
 
         if(usuario.getCpf() == null) errorList.add("Cpf is a required field");
         if(usuario.getNome() == null) errorList.add("Nome is a required field");
-        if(usuario.getdataNascimento() == null){
+        if(usuario.getDataNascimento() == null){
             errorList.add("Data de nascimento is a required field");
         }
 
@@ -64,7 +64,7 @@ public class UsuarioController {
                     content = { @Content(mediaType = "application/json",
                     schema = @Schema(implementation = Usuario.class)) }),
             @ApiResponse(responseCode = "404", description = "Não foi encontrado usuário com o CPF utilizado",
-                    content = { @Content(mediaType = "application/json") }),
+                    content = { @Content(mediaType = "application/json")}),
     })
     public ResponseEntity<?> getUsuario(@PathVariable("cpf") String cpf) {
         if(cpf == null) ResponseEntity.badRequest().body("Cpf is a required field");
