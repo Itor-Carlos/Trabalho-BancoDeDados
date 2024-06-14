@@ -1,6 +1,7 @@
 package com.bancodedados.atividadeindividual.controller;
 
 import com.bancodedados.atividadeindividual.exceptions.not_found.UsuarioNotFoundException;
+import com.bancodedados.atividadeindividual.exceptions.not_found.UsuarioNotFoundExceptionDetails;
 import com.bancodedados.atividadeindividual.model.Usuario;
 import com.bancodedados.atividadeindividual.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -64,7 +65,8 @@ public class UsuarioController {
                     content = { @Content(mediaType = "application/json",
                     schema = @Schema(implementation = Usuario.class)) }),
             @ApiResponse(responseCode = "404", description = "Não foi encontrado usuário com o CPF utilizado",
-                    content = { @Content(mediaType = "application/json")}),
+                    content = { @Content(mediaType = "application/json",
+                    schema = @Schema(implementation = UsuarioNotFoundExceptionDetails.class))}),
     })
     public ResponseEntity<?> getUsuario(@PathVariable("cpf") String cpf) {
         if(cpf == null) ResponseEntity.badRequest().body("Cpf is a required field");
