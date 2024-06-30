@@ -26,7 +26,7 @@ Trabalho individual para a matéria de Banco de Dados na UFS
 
 ### Próximos passos:
  - [ ] Adicionar testes unitários
- - [ ] Melhorar validação de input
+ - [ ] Adicionar validação nas requests
 
 
 
